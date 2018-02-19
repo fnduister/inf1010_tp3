@@ -39,7 +39,9 @@ istream& operator>>(istream& is, ProduitAuxEncheres& produit)
 
 ostream& operator<<(ostream& os, const ProduitAuxEncheres& produit)
 {
-	os << "Produit aux encheres ";
-	os << static_cast<Produit>(produit) << std::endl;
+	os << "\n+++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
+
+	os << "Type: Produit aux encheres";
+	os << "\n+++++++++++++++++++++++++++++++++++++++++++++" << std::endl;	os << static_cast<Produit>(produit) << std::endl;
 	return os;
 }

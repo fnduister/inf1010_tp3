@@ -86,10 +86,13 @@ bool operator==(int indentifiant, const Usager& usager) {
 
 ostream & operator<<(ostream & os, const Usager & usager)
 {
-	os << " Usager :";
-	os << "\t nom : " << usager.obtenirNom() << endl
+	os << "=====================================================================" << std::endl;
+	os << " Usager | ";
+	os << " nom : " << usager.obtenirNom()
 	   << "\t prenom : " << usager.obtenirPrenom()
 	   << "\t codePostal: " << usager.obtenirCodePostal() << endl;
+	os << "=====================================================================" << std::endl;
+
 	return os;
 }
 

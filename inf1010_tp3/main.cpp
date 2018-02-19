@@ -94,7 +94,8 @@ int main()
 
 	//// Afficher lefournisseur
 	//cout << poly << endl;
-	//
+	//		ProduitOrdinaire* temp = static_cast<ProduitOrdinaire*>(prod);
+
 	// Nettoyer la memoire 
 	/*for (int i = 0; i < NB_PRODUCTS;i++) {
 		delete produits[i];
