@@ -53,7 +53,7 @@ Fournisseur& Fournisseur::operator=(const Fournisseur& fournisseur)
 ostream& operator<<(ostream& os, Fournisseur& fournisseur)
 {
 	os << static_cast<Usager> (fournisseur);
-	os << "notes \n";
+	os << "notes: \n";
 	for (int i = 0 ; i < NIVEAUX_SATISFACTION ; i++ )
 	{
 		os << i << ":" << fournisseur.satisfaction_.niveaux_[i] << std::endl;

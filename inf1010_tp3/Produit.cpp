@@ -90,10 +90,9 @@ istream & operator>>(istream & is, Produit & produit)
 
  ostream & operator<<(ostream & os, const Produit & produit)
 {
-	 os << " Produit :"
-		 << " nom: " << produit.obtenirNom() << endl
-		 << " \t \t ref : " << produit.obtenirReference() << endl
-		 << " \t \t prix actuel : " << produit.obtenirPrix() << endl
+	 os << "\t nom: " << produit.obtenirNom() << endl
+		 << "\t ref : " << produit.obtenirReference() << endl
+		 << "\t prix actuel : " << produit.obtenirPrix() << endl
 		 << "\t Fournisseur " << produit.obtenirFournisseur().obtenirNom() << endl;
 	 return os;
 }

@@ -31,11 +31,11 @@ ostream& operator<<(ostream& os, const ProduitOrdinaire& produit)
 {
 	os << "\n+++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
 
-	os << "Type: Produit Ordinaire";
+	os << "\t Type: Produit Ordinaire";
 	os << "\n+++++++++++++++++++++++++++++++++++++++++++++" << std::endl;
 
-	os << static_cast<Produit>(produit) << std::endl;
-	os << "est Taxable : " << produit.estTaxable_;
+	os << static_cast<Produit>(produit);
+	os << std::boolalpha << "\t est Taxable : " << produit.estTaxable_ << "\n";
 	return os;
 }
 

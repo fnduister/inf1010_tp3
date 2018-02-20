@@ -106,6 +106,6 @@ ostream & operator<<(ostream & os, const Client & client)
 	{
 		os << *client.monPanier_;
 	}
-	else { os << "le panier de " << client.obtenirNom() << " est vide!"<< std::endl; }
+	else { os << "le panier de " << client.obtenirPrenom() << " est vide!"<< std::endl; }
 	return os;
 }

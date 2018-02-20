@@ -109,15 +109,13 @@ ostream & operator<<(ostream & os,  const Panier & panier)
 		for (Produit* prod : panier.contenuPanier_)
 			if (prod->retournerType() == TypeProduitOrdinaire)
 			{
-				ProduitOrdinaire* temp = static_cast<ProduitOrdinaire*>(prod);
-				os << *temp;
+				os << *static_cast<ProduitOrdinaire*>(prod);
 			}
 			else
 			{
-				ProduitAuxEncheres* temp = static_cast<ProduitAuxEncheres*>(prod);
-				os << *temp;
+				os << *static_cast<ProduitAuxEncheres*>(prod);
 			}
-		os << "----> total a payer : " << panier.totalAPayer_ << endl;
+		os << "\n----> total a payer : " << panier.totalAPayer_ << "\n\n\n";
 	}
 	else { os << "Panier est vide!"; }
 	
