@@ -79,7 +79,7 @@ void Panier::ajouter(Produit * prod)
 			temp->modifierPrix(temp->obtenirPrix()+temp->obtenirPrix()*TAUX_TAXE);
 		}
 	}
-	contenuPanier_.push_back(prod);
+ 	contenuPanier_.push_back(prod);
 	totalAPayer_ += prod->obtenirPrix();
 }
 

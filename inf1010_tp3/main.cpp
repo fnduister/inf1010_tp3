@@ -86,21 +86,23 @@ int main()
 	//// Afficher Panier du client
 	cout << martine << endl;
 
-	//// trouver le produit le plus cher du panier
-	//cout << " Produit le plus cher "<< *martine.obtenirPanier()->trouverProduitPlusCher();
+	// trouver le produit le plus cher du panier
+	cout << "##############################################\n";
+	cout << " Produit le plus cher\n"<< *martine.obtenirPanier()->trouverProduitPlusCher();
+	cout << "##############################################\n\n\n";
 	//
 	//// livrer le panier du client martine
-	//martine.livrerPanier();
+	martine.livrerPanier();
 
 	//// Afficher lefournisseur
-	//cout << poly << endl;
+	cout << poly << endl;
 	//		ProduitOrdinaire* temp = static_cast<ProduitOrdinaire*>(prod);
 
 	// Nettoyer la memoire 
-	/*for (int i = 0; i < NB_PRODUCTS;i++) {
+	for (int i = 0; i < NB_PRODUCTS;i++) {
 		delete produits[i];
 	}
-	delete prodAuxEncheres;*/
+	delete prodAuxEncheres;
 	int maman = 15;
 	
 }

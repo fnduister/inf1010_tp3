@@ -6,7 +6,8 @@
 
 #include "Client.h"
 #include "Fournisseur.h"
-
+#include <stdlib.h> 
+#include <time.h> 
 
 
 Client::~Client()
@@ -60,8 +61,14 @@ void Client::acheter(ProduitOrdinaire * prod)
 	if (monPanier_ == nullptr)
 		monPanier_ = new Panier(this->obtenirIdentifiant());
 	monPanier_->ajouter(prod);
-	// obtenir une note aléatoire
-	
+	/* initialize random seed: */
+	srand(time(NULL));
+	int sat = rand() % 10 + 1;
+	Satisfaction mySatisfaction = prod->obtenirFournisseur().obtenirSatisfaction();
+	mySatisfaction.niveaux_[sat];
+
+	/* generate secret number between 1 and 10: */
+	prod->obtenirFournisseur().modifierSatisfaction(mySatisfaction) ;
 	// faire la mise à jour de la satisfaction au fournisseur
 	
 }
@@ -74,9 +81,16 @@ void Client::livrerPanier()
 }
 
 
-void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montantMise) {
-	// à faire
-	
+void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montantMise)
+{
+	if (produitAuxEncheres->obtenirPrixBase() < montantMise)
+	{
+		produitAuxEncheres->modifierPrixBase(montantMise);
+		produitAuxEncheres->modifierIdentifiantClient(obtenirIdentifiant());
+	}
+	if (monPanier_ == nullptr)
+		monPanier_ = new Panier(this->obtenirIdentifiant());
+	monPanier_->ajouter(produitAuxEncheres);
 }
 
 Client & Client::operator=(const Client & client)
