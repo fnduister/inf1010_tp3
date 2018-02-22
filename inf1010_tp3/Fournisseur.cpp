@@ -4,6 +4,7 @@
 * Auteur:
 *******************************************/
 #include "Fournisseur.h"
+#include <ctime>
 
 Fournisseur::Fournisseur(const string& nom, const string& prenom, int identifiant, const string& codePostal):
 	Usager(nom, prenom, identifiant, codePostal)
@@ -29,9 +30,9 @@ void Fournisseur::modifierSatisfaction(Satisfaction satisfaction)
 	satisfaction_ = satisfaction;
 }
 
-void Fournisseur::noter(int appreciation)
+void Fournisseur::noter(const int appreciation)
 {
-
+	satisfaction_.niveaux_[appreciation]++;
 }
 
 void Fournisseur::ajouterProduit(Produit* produit)

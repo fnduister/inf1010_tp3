@@ -61,16 +61,13 @@ void Client::acheter(ProduitOrdinaire * prod)
 	if (monPanier_ == nullptr)
 		monPanier_ = new Panier(this->obtenirIdentifiant());
 	monPanier_->ajouter(prod);
-	/* initialize random seed: */
-	srand(time(NULL));
-	int sat = rand() % 10 + 1;
-	Satisfaction mySatisfaction = prod->obtenirFournisseur().obtenirSatisfaction();
-	mySatisfaction.niveaux_[sat];
 
-	/* generate secret number between 1 and 10: */
-	prod->obtenirFournisseur().modifierSatisfaction(mySatisfaction) ;
+	/* initialize random seed: */
+	srand(time(nullptr));
+	const int etoiles = rand() % 5 + 1;
+
 	// faire la mise à jour de la satisfaction au fournisseur
-	
+	prod->obtenirFournisseur().noter(etoiles);
 }
 
 void Client::livrerPanier()

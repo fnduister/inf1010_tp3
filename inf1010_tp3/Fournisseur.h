@@ -26,7 +26,7 @@ public:
 	Satisfaction obtenirSatisfaction() const;
 	
 	void modifierSatisfaction(Satisfaction satisfaction);	
-	void noter(int appreciation);
+	void noter(const int appreciation);
 
 	void ajouterProduit(Produit* produit);
 	void enleverProduit(Produit* produit);	
