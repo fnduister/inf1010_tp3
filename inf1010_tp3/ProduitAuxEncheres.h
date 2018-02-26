@@ -9,9 +9,10 @@
 #include <string>
 #include <iostream>
 #include "Produit.h"
-#include "Client.h"
+
 using namespace std;
 
+class Client;
 class ProduitAuxEncheres : public Produit 
 {
 
@@ -21,11 +22,11 @@ public:
 
 	int obtenirIdentifiantClient() const;
 	double obtenirPrixBase() const;
-	Client* obternirPtrGagnant() const;
+	Client * obternirPtrGagnant() const;
 
 	void modifierIdentifiantClient(int identifiantClient) ;
 	void modifierPrixBase(double prixBase) ;
-	void modifierPtrGagnant(Client* client);
+	void modifierPtrGagnant(Client * client);
 
 	friend istream& operator>>(istream& is, ProduitAuxEncheres& produit);
 	friend ostream& operator<<(ostream& os, const ProduitAuxEncheres& produit);
@@ -33,6 +34,6 @@ public:
 private:		
 	double prixBase_;	
 	int identifiantClient_;
-	Client* ptrGagnant_;
+	Client * ptrGagnant_;
 };
 #endif

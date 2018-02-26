@@ -4,9 +4,9 @@
 * Auteur: 
 **************************************************/
 
-//#include "Fournisseur.h"
-//#include "ProduitOrdinaire.h"
-//#include "ProduitAuxEncheres.h"
+#include "Fournisseur.h"
+#include "ProduitOrdinaire.h"
+#include "ProduitAuxEncheres.h"
 #include "Client.h"
 #include <string>
 #include <iostream>
@@ -80,11 +80,21 @@ int main()
 	//// Client mise sur le produit aux encheres 
 	martine.miserProduit(prodAuxEncheres, 500);
 
+	cout << "\nMartine vient de faire une mise sur le produit voici son total a payer:";
+	cout << martine.obtenirPanier()->obtenirTotalApayer() << std::endl;
+
 	//// afficher le produit aux enchères
 	cout << *prodAuxEncheres << endl;
 
 	//// Ma copie mise aussi  sur le produit  aux enchères
 	maCopie.miserProduit(prodAuxEncheres, 555);
+
+	// On essaye encore avec une mise plus base pour montrer que la mise n'est pas assez haute
+	martine.miserProduit(prodAuxEncheres, 500);
+
+	// afin de montrer qu'elle n'a plus le produit au enchere dans son panier
+	cout << "\nMartine vient de faire surmiser donc elle n'a plus le produit aux enchere dans son panier:";
+	cout << martine.obtenirPanier()->obtenirTotalApayer() << std::endl;
 
 	//// afficher le produit aux enchères
 	cout << *prodAuxEncheres << endl;

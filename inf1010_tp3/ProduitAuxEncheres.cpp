@@ -22,7 +22,7 @@ double ProduitAuxEncheres::obtenirPrixBase() const
 	return prixBase_;
 }
 
-Client* ProduitAuxEncheres::obternirPtrGagnant() const
+Client * ProduitAuxEncheres::obternirPtrGagnant() const
 {
 	return ptrGagnant_;
 };
@@ -37,7 +37,7 @@ void ProduitAuxEncheres::modifierPrixBase(double prixBase)
 	prixBase_ = prixBase;
 }
 
-void ProduitAuxEncheres::modifierPtrGagnant(Client* client)
+void ProduitAuxEncheres::modifierPtrGagnant(Client * client)
 {
 	ptrGagnant_ = client;
 }

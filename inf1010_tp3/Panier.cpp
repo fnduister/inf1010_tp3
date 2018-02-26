@@ -83,6 +83,7 @@ void Panier::enleverProduit(Produit* produit)
 		if (*contenuPanier_[i] == *produit)
 		{
 			contenuPanier_.erase(contenuPanier_.begin() + i);
+			totalAPayer_ -= produit->obtenirPrix();
 		}
 	}
 }

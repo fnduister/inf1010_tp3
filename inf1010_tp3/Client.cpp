@@ -87,6 +87,7 @@ void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montant
 			temp->obtenirPanier()->enleverProduit(produitAuxEncheres);
 		produitAuxEncheres->modifierPtrGagnant(this);
 
+		//Seulement ajouter au panier si la mise est suffisante.
 		if (monPanier_ == nullptr)
 			monPanier_ = new Panier(this->obtenirIdentifiant());
 		monPanier_->ajouter(produitAuxEncheres);
