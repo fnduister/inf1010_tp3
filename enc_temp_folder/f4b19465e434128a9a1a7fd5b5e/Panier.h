@@ -30,7 +30,6 @@ public:
 
 	void modifierTotalAPayer(double totalAPayer);
 	void modifierIdClient(int idClient);
-	void enleverProduit(Produit* produit);
 
 	void ajouter(Produit * prod);
 	void livrer();

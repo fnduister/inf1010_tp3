@@ -11,20 +11,26 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <ctime>
 using namespace std;
 
 const int  NB_PRODUCTS = 15;
 
 /**
 *Répondez aux questions ici :
-* 1/
+* 1/ Parce que ProduitOrdinire et ProduitAux Enchere sont des produits
 * 2/
-* 2.1
-* 2.2
+* 2.1 Un static_cast permet d'utiliser la surcharge d'operateur << d'une classe parent.
+* 2.2 On aura une methode d'affichage qui affichera juste les attributs de l'objet de la classe
+*	  sans afficher ceux de la classe parent ou il faudrat gerer l'affichage a travers les methodes d'acces de la classe parents
+*	  en faisant attention a ce que l'affiche des deux classe respecte la meme structure.
 **/
 
 int main()
 {
+	/* initialize random seed: */
+	srand(time(nullptr));
+
 	// Creez un objet de classe client à l'aide du constructeur
 	Client martine("Bellaiche", "Martine", 1111, "H2T3A6", 199004);
 

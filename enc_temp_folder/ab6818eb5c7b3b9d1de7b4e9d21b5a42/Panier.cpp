@@ -36,6 +36,7 @@ double Panier::obtenirTotalApayer() const {
 	return totalAPayer_;
 }
 
+
 double Panier::calculerTotalApayer()
 {
 	for (Produit* prod : contenuPanier_)
@@ -52,14 +53,20 @@ double Panier::calculerTotalApayer()
 	return totalAPayer_;
 }
 
+
+
 void Panier::modifierTotalAPayer(double totalAPayer)
 {
 	totalAPayer_ = totalAPayer;
 }
 
+
 void Panier::modifierIdClient(int idClient) {
 	idClient_ = idClient;
 }
+
+
+
 
 void Panier::ajouter(Produit * prod)
 {
@@ -74,17 +81,6 @@ void Panier::ajouter(Produit * prod)
 	else totalAPayer_ += prod->obtenirPrix();
  	contenuPanier_.push_back(prod);
 	
-}
-
-void Panier::enleverProduit(Produit* produit)
-{
-	for (unsigned i = 0; i < contenuPanier_.size(); i++)
-	{
-		if (*contenuPanier_[i] == *produit)
-		{
-			contenuPanier_.erase(contenuPanier_.begin() + i);
-		}
-	}
 }
 
 void Panier::livrer()

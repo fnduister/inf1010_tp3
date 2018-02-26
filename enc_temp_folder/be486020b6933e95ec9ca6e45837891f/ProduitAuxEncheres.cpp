@@ -8,7 +8,7 @@
 
 ProduitAuxEncheres::ProduitAuxEncheres(Fournisseur& fournisseur, const string& nom, int reference, double prix,
 	TypeProduit type):
-	Produit(fournisseur, nom, reference, prix, type),prixBase_(0),identifiantClient_(0),ptrGagnant_(nullptr)
+	Produit(fournisseur, nom, reference, prix, type),prixBase_(0),identifiantClient_(0)
 {
 }
 
@@ -22,11 +22,6 @@ double ProduitAuxEncheres::obtenirPrixBase() const
 	return prixBase_;
 }
 
-Client* ProduitAuxEncheres::obternirPtrGagnant() const
-{
-	return ptrGagnant_;
-};
-
 void ProduitAuxEncheres::modifierIdentifiantClient(int identifiantClient)
 {
 	identifiantClient_ = identifiantClient;
@@ -36,13 +31,6 @@ void ProduitAuxEncheres::modifierPrixBase(double prixBase)
 {
 	prixBase_ = prixBase;
 }
-
-void ProduitAuxEncheres::modifierPtrGagnant(Client* client)
-{
-	ptrGagnant_ = client;
-}
-
-
 
 istream& operator>>(istream& is, ProduitAuxEncheres& produit)
 {

@@ -82,17 +82,10 @@ void Client::miserProduit(ProduitAuxEncheres* produitAuxEncheres, double montant
 	{
 		produitAuxEncheres->modifierPrixBase(montantMise);
 		produitAuxEncheres->modifierIdentifiantClient(obtenirIdentifiant());
-		Client *temp = produitAuxEncheres->obternirPtrGagnant();
-		if (temp != nullptr)
-			temp->obtenirPanier()->enleverProduit(produitAuxEncheres);
-		produitAuxEncheres->modifierPtrGagnant(this);
-
-		if (monPanier_ == nullptr)
-			monPanier_ = new Panier(this->obtenirIdentifiant());
-		monPanier_->ajouter(produitAuxEncheres);
 	}
-	else
-		std::cout << "vous n'avez pas visez assez haut.\nLa plus haute mise est:" << produitAuxEncheres->obtenirPrixBase() << std::endl;
+	if (monPanier_ == nullptr)
+		monPanier_ = new Panier(this->obtenirIdentifiant());
+	monPanier_->ajouter(produitAuxEncheres);
 }
 
 Client & Client::operator=(const Client & client)

@@ -40,8 +40,15 @@ void Fournisseur::ajouterProduit(Produit* produit)
 	contenuCatalogue_.push_back(produit);
 }
 
-void Fournisseur::enleverProduit(Produit* produit)
+void Fournisseur::enleverProduit(Produit * produit)
 {
+	for (unsigned i = 0; i < contenuCatalogue_.size(); i++)
+	{
+		if (*contenuCatalogue_[i] == *produit)
+		{
+			contenuCatalogue_.erase(contenuCatalogue_.begin() + i);
+		}
+	}
 }
 
 Fournisseur& Fournisseur::operator=(const Fournisseur& fournisseur)

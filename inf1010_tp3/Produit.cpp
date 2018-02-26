@@ -12,9 +12,9 @@ Produit::Produit(Fournisseur& fournisseur,const string& nom, int reference, doub
 	fournisseur_.ajouterProduit(this);
 }
 
-
-Produit::~Produit() {
-	// à faire
+Produit::~Produit()
+{
+	fournisseur_.enleverProduit(this);
 }
 
 // Methodes d'acces
